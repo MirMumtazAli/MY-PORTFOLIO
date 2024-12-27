@@ -1,0 +1,733 @@
+1024<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mir Mumtaz Ali - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* For tablets and smaller laptops */
+    @media (max-width: 1024px) {
+        header {
+            padding: 15px 5%;
+        }
+
+        .section {
+            padding: 15px;
+        }
+
+        .project-card {
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .contact-section {
+            padding: 30px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+        }
+
+        .contact-section p {
+            font-size: 0.95rem;
+        }
+
+        .contact-section form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            font-size: 1rem;
+            padding: 8px;
+        }
+
+        .contact-section button {
+            font-size: 1rem;
+            padding: 8px 16px;
+        }
+    }
+
+    /* For landscape phones and smaller tablets */
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        .nav-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-buttons button {
+            width: 90%;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            width: 95%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .project-card {
+            width: 100%;
+            padding: 15px;
+            margin: 10px auto;
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+
+        .skills-section {
+            padding: 20px;
+        }
+
+        .skills-section h2 {
+            font-size: 1.8rem;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+            gap: 10px;
+        }
+
+        .skill-item {
+            font-size: 1rem;
+            padding: 10px;
+        }
+
+        .theme-toggle {
+            top: 10px;
+            right: 10px;
+        }
+        .contact-section {
+            padding: 10px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.5rem;
+        }
+
+        .contact-section form {
+            padding: 0 10px;
+        }
+
+        .contact-section button {
+            width: 100%;
+            font-size: 1rem;
+        }
+}
+    
+
+    /* For portrait phones */
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        .nav-buttons button {
+            font-size: 1em;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+        }
+
+        .project-card {
+            padding: 10px;
+            margin: 5px 0;
+            max-width: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .skills-section {
+            padding: 40px;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .skills-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Four columns by default */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-section h2 {
+            font-size: 1.2rem;
+        }
+
+        .contact-section p {
+            font-size: 0.5rem;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            font-size: 0.5rem;
+        }
+
+    .contact-section button {
+        font-size: 0.8rem;
+    }
+
+        footer {
+            font-size: 0.9rem;
+        }
+    }
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --primary-color: #555;
+            --secondary-color: #333;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --primary-color: #888;
+            --secondary-color: #555;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 10%;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .nav-buttons button {
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .nav-buttons button:nth-child(1) {
+            background-color: #444;
+        }
+
+        .nav-buttons button:nth-child(2) {
+            background-color: #555;
+        }
+
+        .nav-buttons button:nth-child(3) {
+            background-color: #666;
+        }
+
+        .nav-buttons button:nth-child(4) {
+            background-color: #777;
+        }
+
+        .nav-buttons button:nth-child(5) {
+            background-color: #888;
+        }
+
+        .nav-buttons button:not(:last-child) {
+            border-right: 2px solid var(--bg-color);
+        }
+
+        .nav-buttons button:hover {
+            background: var(--secondary-color);
+        }
+
+        .nav-buttons button:focus {
+            outline: none;
+        }
+
+        .section {
+            margin: 50px auto; /* Increased margin between sections */
+            width: 80%;
+            background: var(--bg-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        .section h2 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.8em;
+            position: absolute;
+            top: -30px; /* Position the heading outside the section box */
+            left: 20px;
+            background-color: var(--bg-color);
+            padding: 0 10px;
+            border-radius: 5px;
+            margin-bottom: 10px; /* Add space between heading and content */
+        }
+
+        .section p {
+            margin-top: 10px; /* Space between heading and content */
+        }
+
+        .project {
+            margin-bottom: 15px;
+        }
+
+        .project a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        .project-card {
+            background: #eceaea;
+            border: 1px solid #696565;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.rem;
+            color: #333;
+        }
+
+        .project-card ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .project-card ul li {
+            color: black;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+        }
+
+        .project-card p strong {
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .contact span:not(:last-child)::after,
+        .contact a:not(:last-child)::after {
+            content: "||";
+            
+            color: var(--primary-color);
+        }
+
+        .contact span,
+        .contact a {
+            text-decoration: none;
+            margin-left: 5px;
+            color: var(--primary-color);
+            font-size: 1em;
+        }
+
+        .contact a:hover {
+            
+            color: var(--secondary-color);
+        }
+
+
+        .theme-toggle {
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 30px; /* Set width to 45px */
+            height: 15px; /* Set height to 25px */
+            background: #333; /* Extra dark grey background */
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            padding: 0 1px;
+        }
+
+        .toggle-circle {
+            width: 20px; /* Set circle width to 20px */
+            height: 20px; /* Set circle height to 20px */
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .toggle-circle::before {
+            content: '\2600'; /* Sun icon */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8em;
+            color: var(--primary-color);
+        }
+
+        [data-theme="dark"] .toggle-circle {
+            transform: translateX(20px); /* Move the circle when dark theme is active */
+        }
+
+        [data-theme="dark"] .toggle-circle::before {
+            content: '\1F319'; /* Moon icon */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+<div class="theme-toggle" onclick="toggleTheme()">
+    <div class="toggle-circle"></div>
+</div>
+
+<header style="text-align: center; background-color: #cfcccc; padding: 20px 0;">
+    <h1 style="font-size: 3rem; margin: 0; color: #000000;">Mir Mumtaz Ali</h1>
+    <p style="font-size: 1.5rem; margin: 10px 0 0; color: #555;">Python Developer | MCA</p>
+</header>
+
+
+<div class="nav-buttons">
+    <button onclick="document.getElementById('about').scrollIntoView()">About</button>
+    <button onclick="document.getElementById('education').scrollIntoView()">Education</button>
+    <button onclick="document.getElementById('projects').scrollIntoView()">Projects</button>
+    <button onclick="document.getElementById('skills').scrollIntoView()">Skills</button>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Contact</button>
+</div>
+
+<section id="about" class="section">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 50px;">About Myself</h2>
+    <p>I am a Python developer with a strong foundation in programming and a passion for solving real-world problems. I strive for personal and professional growth and enjoy working on innovative projects that challenge me to expand my expertise. Interning at CodSoft allowed me to design efficient applications and strengthen my problem-solving skills. I aspire to join a dynamic organization where I can make meaningful contributions and deliver impactful solutions.</p>
+</section>
+
+<section id="education" class="section" style="background-color: #f9f9f9; padding: 50px 20px;">
+    <h2 style="text-align: left; font-size: 2rem; margin-bottom: 50px;">Education Journey</h2>
+    <div style="position: relative; max-width: 800px; margin: 0 auto;">
+  
+      <!-- Vertical Line -->
+      <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 83%; width: 4px; background: #36393b;"></div>
+  
+      <!-- Timeline Node 1 -->
+      <div style="display: flex; margin-bottom: 50px; position: abs;">
+        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: #000000; border-radius: 50%;"></div>
+        <div style="padding: 20px; background: white; border: 1px solid #ddd; border-radius: 8px; width: 45%; margin-left: 55%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <h3 style="margin: 0; color: #a39c9c;">2023 - Present</h3>
+          <p style="margin: 5px 0 0; font-weight: bold; color: #000000;">Master of Computer Applications (MCA)</p>
+          <p style="margin: 0; color: #666;">Deccan College of Engineering and Technology</p>
+        </div>
+      </div>
+  
+      <!-- Timeline Node 2 -->
+      <div style="display: flex; margin-bottom: 50px; position: relative;">
+        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: #6f7275; border-radius: 50%;"></div>
+        <div style="padding: 20px; background: white; border: 1px solid #ddd; border-radius: 8px; width: 45%; margin-right: 55%; text-align: right; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <h3 style="margin: 0; color: #a39c9c;">2020 - 2023</h3>
+          <p style="margin: 5px 0 0; font-weight: bold; color: #000000;">Bachelor of Commerce (Honours)</p>
+          <p style="margin: 0; color: #666;">Badruka College of Commerce</p>
+          <p style="margin: 5px 0 0; font-style: italic; color: #000000;"><strong>CGPA:</strong> <span style="color: #fa0202; font-weight: bold;">9.16</span></p>
+        </div>
+      </div>
+  
+      <!-- Timeline Node 3 -->
+      <div style="display: flex; margin-bottom: 50px; position: relative;">
+        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: #6e7275; border-radius: 50%;"></div>
+        <div style="padding: 20px; background: white; border: 1px solid #ddd; border-radius: 8px; width: 45%; margin-left: 55%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <h3 style="margin: 0; color: #a39c9c;">2018 - 2020</h3>
+          <p style="margin: 5px 0 0; font-weight: bold; color: #000000;">Intermediate (MEC)</p>
+          <p style="margin: 0; color: #666;">Gyanam Junior College</p>
+          <p style="margin: 5px 0 0; font-style: italic; color: #000000;"><strong>Percentage:</strong> <span style="color: #fa0202; font-weight: bold;">94.8%</span></p>
+        </div>
+      </div>
+  
+      <!-- Timeline Node 4 -->
+      <div style="display: flex; position: relative;">
+        <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 20px; height: 20px; background: #73777c; border-radius: 50%;"></div>
+        <div style="padding: 20px; background: white; border: 1px solid #ddd; border-radius: 8px; width: 45%; margin-right: 55%; text-align: right; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <h3 style="margin: 0; color: #a39c9c;">2018</h3>
+          <p style="margin: 5px 0 0; font-weight: bold; color: #000000;">Secondary School of Education</p>
+          <p style="margin: 0; color: #666;">Javid Mission High School</p>
+          <p style="margin: 5px 0 0; font-style: italic; color: #000000;"><strong>Grade:</strong> <span style="color: #fa0202; font-weight: bold;">9.0</span></p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+<section id="experience" class="section" style="padding: 50px 20px;">
+    <h2 style="text-align: left; font-size: 2rem; margin-bottom: 40px;">Professional Experience</h2>
+    <div style="margin: 0 auto;">
+        <div style="padding: 20px; background: white; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin-bottom: 30px;">
+            <h3 style="margin: 0; color: #000000; font-size: 1.4rem;">Python Programming Intern</h3>
+            <p style="margin: 10px 0; font-size: 1.2rem; color: #666;">
+                <strong>CodSoft</strong> | Nov 2024 - Dec 2024 · 1 month | Hyderabad, Telangana, India | Remote
+            </p>
+            <p style="margin: 15px 0 0; font-weight: bold; color: #555;">Roles and Responsibilities:</p>
+            <ul style="margin: 15px 0 0; padding-left: 20px; color: #555; font-size: 1rem;">
+                <li>Designed and implemented Python-based applications, including a calculator, password generator, and contact management system.</li>
+                <li>Developed an interactive Rock-Paper-Scissors game with dynamic score tracking and seamless user interaction.</li>
+                <li>Applied Python libraries to optimize functionality and enhance application efficiency.</li>
+                <li>Strengthened expertise in problem-solving, software development, and user-focused design.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section" style="padding: 10px; box-sizing: border-box; max-width: 100%; margin: auto;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 50px;">Projects</h2>
+
+    <div class="project-card" style="margin-bottom: 20px; max-width: 1100px; color: #000000; background-color:#eceaea ; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <h3 style="color: #807f7f">EasyConnect Address Book</h3>
+        <p><strong>Associated with CodSoft</strong></p>
+        <p>This Python application helps you manage contacts efficiently with an intuitive Tkinter interface.</p>
+        <ul style="list-style: disc; margin-left: 20px;">
+            <li>Add new contacts with relevant details.</li>
+            <li>Search and find contacts instantly.</li>
+            <li>Update and refine stored information.</li>
+            <li>Delete contacts to maintain a clean list.</li>
+        </ul>
+        <p><strong>Tech Stack:</strong> Python, Tkinter</p>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/MirMumtazAli/CODSOFT/tree/main/Task%205%20Contact%20Book" target="_blank">View Project</a></p>
+    </div>
+
+    <div class="projects" style="margin-bottom: 25px; max-width: 1100px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <h3 style="color: #807f7f">FileFlow Organizer</h3>
+        <p>This Python app automatically organizes files into categorized subfolders based on extensions.</p>
+        <ul>
+            <li>Automatically categorizes files into subfolders.</li>
+            <li>Customizable file organization.</li>
+            <li>Error handling for invalid paths.</li>
+            <li>Intuitive setup prompts for users.</li>
+        </ul>
+        <p><strong>Tech Stack:</strong> Python, OS Module, Shutil Module</p>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/MirMumtazAli/FileFlow-Organizer" target="_blank">View Project</a></p>
+    </div>
+
+    <div class="projects" style="margin-bottom: 25px; max-width: 1100px; color: #000000; background-color:#eceaea; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <h3 style="color: #807f7f">PassGen Pro</h3>
+        <p><strong>Associated with CodSoft</strong></p>
+        <p>Password generator with a Tkinter interface for easy password creation.</p>
+        <ul>
+            <li>Customizable password length.</li>
+            <li>Options for uppercase, lowercase, numbers, and symbols.</li>
+            <li>Password strength indicator.</li>
+            <li>Instant password copy to clipboard.</li>
+        </ul>
+        <p><strong>Tech Stack:</strong> Python, Tkinter, String & Random Modules</p>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/MirMumtazAli/CODSOFT/tree/main/Task%203%20Password%20Generator" target="_blank">View Project</a></p>
+    </div>
+
+    <div class="projects" style="margin-bottom: 25px; max-width: 1100px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <h3 style="color: #807f7f">QuickCalc</h3>
+        <p><strong>Associated with CodSoft</strong></p>
+        <p>Simple calculator that performs basic arithmetic operations.</p>
+        <ul>
+            <li>Handles addition, subtraction, multiplication, and division.</li>
+            <li>Includes error handling for invalid inputs.</li>
+            <li>Interactive console-based experience.</li>
+        </ul>
+        <p><strong>Tech Stack:</strong> Python, Error Handling</p>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/MirMumtazAli/CODSOFT/tree/main/Task%202%20Calculator" target="_blank">View Project</a></p>
+    </div>
+
+    <div class="projects" style="margin-bottom: 25px; max-width: 1100px; color: #000000; background-color:#eceaea; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <h3 style="color: #807f7f">RPS Showdown</h3>
+        <p><strong>Associated with CodSoft</strong></p>
+        <p>Rock-Paper-Scissors game with an interactive GUI using Tkinter.</p>
+        <ul>
+            <li>Seamless gameplay with an interactive GUI.</li>
+            <li>Dynamic score tracking.</li>
+            <li>Randomized computer moves.</li>
+            <li>Play Again feature.</li>
+        </ul>
+        <p><strong>Tech Stack:</strong> Python, Tkinter, Random Module</p>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/MirMumtazAli/CODSOFT/tree/main/Task%204%20Rock-Paper-Scissors%20Game" target="_blank">View Project</a></p>
+    </div>
+
+    <div class="projects" style="margin-bottom: 25px; max-width: 1100px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <h3 style="color: #807f7f">TextTwist Helper</h3>
+        <p>This tool simplifies string manipulations, providing easy transformations and checks.</p>
+        <ul>
+            <li>Convert strings to uppercase, lowercase, or capitalized format.</li>
+            <li>Check if a string is lowercase or uppercase.</li>
+            <li>Reverse strings and swap cases.</li>
+            <li>Check string properties like <code>startswith</code> and <code>endswith</code>.</li>
+        </ul>
+        <p><strong>Tech Stack:</strong> Python</p>
+        <p><strong>GitHub Link:</strong> <a href="https://github.com/MirMumtazAli/TextTwist-Helper" target="_blank">View Project</a></p>
+    </div>
+
+</section>
+
+<section id="skills" class="section" style="padding: 50px 20px; background-color: #f4f4f4;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">Skills</h2>
+    <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 1.2rem; color: #555;">
+        <li style="margin-bottom: 15px;">
+            <strong style="font-size: 1.3rem; color: #333;">Programming:</strong> Python
+        </li>
+        <li style="margin-bottom: 15px;">
+            <strong style="font-size: 1.3rem; color: #333;">Tools:</strong> MS Excel, MS Word
+        </li>
+        <li style="margin-bottom: 15px;">
+            <strong style="font-size: 1.3rem; color: #333;">Certifications:</strong> Data Analysis Using Python, Python Essentials, JPMorgan Chase & Co. - Excel Skills
+        </li>
+        <li style="margin-bottom: 15px;">
+            <strong style="font-size: 1.3rem; color: #333;">Miscellaneous:</strong> Project Planning, Program Creation, Project Management
+        </li>
+    </ul>
+</section>
+
+<section id="contact" class="section">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 50px;">Contact</h2>
+    <div class="contact" style="font-size: small;">
+        <span class="copy-item" onclick="copyToClipboard('+91-9652972511')">
+            <i class="fas fa-phone" style="color: #333;"></i> 
+            <strong>+91-9652972511</strong>
+            <span class="tooltip">Copy</span>
+        </span>
+      
+        <span class="copy-item" onclick="copyToClipboard('mirmumtazali7278@gmail.com')">
+            <i class="fas fa-envelope" style="color: #333;"></i> 
+            <strong>mirmumtazali7278@gmail.com</strong>
+            <span class="tooltip">Copy</span>
+        </span>
+     
+        <a href="https://www.linkedin.com/in/mir-mumtaz-ali/" target="_blank">
+            <i class="fab fa-linkedin" style="color: #333;"></i> 
+            <strong>LinkedIn</strong>
+        </a>
+      
+        <a href="https://github.com/mirmumtazali" target="_blank">
+            <i class="fab fa-github" style="color: #333;"></i> 
+            <strong>GitHub</strong>
+        </a>
+    </div>
+</section>
+
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert(`Copied: ${text}`);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+</script>
+
+<style>
+    .copy-item {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .copy-item:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .tooltip {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8em;
+        white-space: nowrap;
+        transition: opacity 0.3s;
+    }
+</style>
+
+
+<footer>
+    <p>© 2024 Mir Mumtaz Ali. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute('data-theme');
+        body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+    }
+</script>
+
+</body>
+</html>
